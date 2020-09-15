@@ -53,7 +53,7 @@ public class MethodTeacher
 
 public class MethodTester
 {
-    static void Main()
+    static void Main34234()
     {
         MethodTeacher methodTeacher = new MethodTeacher();
 
