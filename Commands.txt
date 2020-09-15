@@ -1,0 +1,13 @@
+-Create container folder e.g. MBM-A
+-Goto terminal and cd to MBM-A
+-dotnet new console --name CSharpBasics
+-cd CSharpBasics
+-dotnet build
+-dotnet run
+
+
+Git Commands
+> git clone repo-url
+> git add .
+> git commit -m "Added/modifed something"
+> git push
