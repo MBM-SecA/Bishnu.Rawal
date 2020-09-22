@@ -17,28 +17,6 @@ public abstract class Shape
     }
 }
 
-public class Square : Shape, IShapeWithSides
-{
-    public Square(double side)
-    {
-        Side = side;
-    }
-
-    public double Side { get; set; }
-
-    public override double GetArea() => Side * Side;
-    public override double GetCircumference() => 4 * Side;
-
-    public override void Display()
-    {
-        Console.WriteLine($"Displaying results for Sqaure with side {Side}:");
-        Console.WriteLine($"Area: {this.GetArea()} square unit.");
-        Console.WriteLine($"Circumference: {this.GetCircumference()} unit.");
-    }
-
-    public double GetDiagonal() => Math.Sqrt(2 * Side * Side);
-}
-
 public class Rectangle : Shape, IShapeWithSides
 {
     public double Length { get; set; }
@@ -52,8 +30,21 @@ public class Rectangle : Shape, IShapeWithSides
 
     public override double GetArea() => Length * Breadth;
     public override double GetCircumference() => 2 * (Length + Breadth);
-
+    public override void Display()
+    {
+        Console.WriteLine($"Displaying results for rectangle[{Length}X{Breadth}]");
+        Console.WriteLine($"Area: {this.GetArea()} square unit.");
+        Console.WriteLine($"Circumference: {this.GetCircumference()} unit.");
+    }
     public double GetDiagonal() => Math.Sqrt(Length * Length + Breadth * Breadth);
+}
+
+public class Square : Rectangle
+{
+    public Square(double side) : base(side, side)
+    {
+        
+    }
 }
 
 public class Circle : Shape
