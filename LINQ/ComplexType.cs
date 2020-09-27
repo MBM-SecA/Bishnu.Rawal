@@ -1,7 +1,7 @@
 using System.Linq;
 public class ComplexType
 {
-    public void LearnRestrictions()
+    public void LearnLINQ()
     {
          var countries = Country.GetCountries();
 
@@ -19,5 +19,8 @@ public class ComplexType
             var result6 = from c in countries
                           where c.Continent == "Asia" && c.IndependenceDay == default
                           select c;
+
+            // HW - Is there any african country in your coutry collection
+            // HW - Print first 2 largest asian country names.
     }
 }
