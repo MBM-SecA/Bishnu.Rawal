@@ -1,10 +1,15 @@
 @model List<Person>
 
-<h1>All Employees...</h1>
+@{
+  ViewData["TitlePhrase"] = "All Employees";
+}
+
+<h1>All Employees (@Model.Count)</h1>
 
 <table class="table">
   <thead class="thead-dark">
-    <tr>      
+    <tr>
+      <th scope="col">#</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Address</th>
@@ -13,10 +18,16 @@
     </tr>
   </thead>
   <tbody>
+    @{int i = 1;}
     @foreach (var employee in Model)
     {
         <tr scope="row">
-            <td>@employee.FirstName</td>
+            <td>@(i++)</td>
+            <td>              
+              <a href="/employee/detail?id=@employee.Id">
+                @employee.FirstName
+              </a>
+            </td>
             <td>@employee.Surname</td>
             <td>@employee.Address</td>
             <td>@employee.Gender</td>
