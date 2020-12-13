@@ -15,8 +15,8 @@
       <th scope="col">Address</th>
       <th scope="col">Gender</th>
       <th scope="col">Salary</th>
-      <th></th>
-      <th></th>
+      <th scope="col">Department</th>
+      <th></th>      
     </tr>
   </thead>
   <tbody>
@@ -34,8 +34,11 @@
             <td>@employee.Address</td>
             <td>@employee.Gender</td>
             <td>@employee.Salary</td>
-            <td><a class="btn btn-warning" href="/Employee/Edit?id=@employee.Id">Edit</a></td>
-            <td><a class="btn btn-danger" href="/Employee/Delete?id=@employee.Id">Delete</a></td>
+            <td>@employee.Department.Name</td>
+            <td>
+              <a class="btn btn-warning" href="/Employee/Edit?id=@employee.Id">Edit</a>
+              <a class="btn btn-danger" href="/Employee/Delete?id=@employee.Id">Delete</a>
+            </td>
         </tr>
     }
   </tbody>
